@@ -1,0 +1,29 @@
+{
+  "name": "vue-chatgpt-history",
+  "version": "1.0.0",
+  "description": "Browser extension for chatGPT history search",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --env=production --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production"
+  },
+  "keywords": [
+    "browser",
+    "webpack",
+    "laravel-mix",
+    "extension"
+  ],
+  "author": "\"browser\",",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "laravel-mix": "^6.0.49",
+    "postcss": "^8.4.32",
+    "sass": "^1.69.6",
+    "sass-loader": "^13.3.3",
+    "vue": "^3.4.3",
+    "vue-loader": "^17.4.2",
+    "vue-template-compiler": "^2.7.16"
+  }
+}

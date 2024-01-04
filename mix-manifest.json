@@ -1,1 +1,9 @@
-{}
+{
+    "/dist/js/popup.js": "/dist/js/popup.js",
+    "/dist/css/popup.css": "/dist/css/popup.css",
+    "/dist/img/logo-128.png": "/dist/img/logo-128.png",
+    "/dist/img/logo-16.png": "/dist/img/logo-16.png",
+    "/dist/img/logo-19.png": "/dist/img/logo-19.png",
+    "/dist/img/logo-38.png": "/dist/img/logo-38.png",
+    "/dist/img/logo-48.png": "/dist/img/logo-48.png"
+}

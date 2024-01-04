@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="title text-center">Random Quote</h1>
+    <h1 class="title text-center">ChatGPT search</h1>
     <blockquote class="quote-card">
       <p>
         {{ state.quote }}
@@ -24,6 +24,7 @@ export default {
     try {
       const response = await fetch("https://zenquotes.io/api/random");
       const data = await response.json();
+      console.log("data", data)
 
       if (Array.isArray(data) && data.length > 0) {
         this.state.quote = data[0].q; // Extract the quote from the response

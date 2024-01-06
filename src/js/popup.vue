@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container w-[800px]">
     <h1 class="title text-center">ChatGPT search</h1>
 
     <div>

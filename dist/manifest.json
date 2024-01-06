@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
-    "name": "ChatGPT history search",
-    "version": "1.0.0",
+    "name": "ChatGPT history search vue",
+    "version": "1.0.1",
     "description": "Browser extension for searching chat history",
     "host_permissions": ["https://chat.openai.com/*"],
     "action": {

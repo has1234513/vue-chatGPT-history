@@ -2,23 +2,67 @@
   <div class="container">
     <h1 class="title text-center">ChatGPT search</h1>
 
-    <div class='flex items-center justify-center min-h-screen bg-blue-600'>
-        <div class="flex w-full mx-10 rounded bg-white">
-            <input class=" w-full border-none bg-transparent px-4 py-1 text-gray-400 outline-none focus:outline-none " type="search" name="search" placeholder="Search..." />
-            <button type="submit" class="m-2 rounded bg-blue-600 px-4 py-2 text-white">
-                <svg class="fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
-                <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
-                </svg>
-            </button>
-        </div>
-    </div>
-    <blockquote class="quote-card">
-      <p>
-        {{ state.quote }}
-      </p>
+    <div>
 
-      <cite> {{ state.author }} </cite>
-    </blockquote>
+      <div class="flex flex-col p-2 py-6 m-h-screen">
+
+        <div class="bg-white items-center justify-between w-full flex rounded-full shadow-lg p-2 mb-5 sticky" style="top: 5px">
+
+            <div>
+
+                <div class="p-2 mr-1 rounded-full hover:bg-gray-100 cursor-pointer">
+
+                    <svg class="h-6 w-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                    </svg>
+
+                </div>
+
+            </div>
+
+            <input class="font-bold uppercase rounded-full w-full py-4 pl-4 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline lg:text-sm text-xs" type="text" placeholder="Search">
+
+                <div class="bg-gray-600 p-2 hover:bg-blue-400 cursor-pointer mx-2 rounded-full">
+
+                    <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                    </svg>
+
+                </div>
+
+        </div>
+
+
+        <div class="flex flex-col gap-4 lg:p-4 p-2  rounde-lg m-2">
+
+            <div class="lg:text-2xl md:text-xl text-lg lg:p-3 p-1 font-black text-gray-700">Selecciona el negocio</div>
+
+            <div class="flex items-center justify-between w-full p-2 lg:rounded-full md:rounded-full hover:bg-gray-100 cursor-pointer border-2 rounded-lg">
+
+                <div class="lg:flex md:flex items-center">
+                <div class="h-12 w-12 mb-2 lg:mb-0 border md:mb-0 rounded-full mr-3"></div>
+
+                <div class="flex flex-col">
+
+                    <div class="text-sm leading-3 text-gray-700 font-bold w-full">Club de Tenis de Concepcion</div>
+
+                    <div class="text-xs text-gray-600 w-full">Av. veteranos del 93, Parque ecuador, Concepcion.</div>
+                
+                </div>
+
+                </div>
+
+                <svg class="h-6 w-6 mr-1 invisible md:visible lg:visible xl:visible" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+                
+            </div>
+                
+        </div>
+            
+      </div>
+      
+  </div>
   </div>
 </template>
 <script>

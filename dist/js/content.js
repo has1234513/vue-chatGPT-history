@@ -1,0 +1,1 @@
+chrome.runtime.onMessage.addListener((function(e,s,r){"searchHistory"===e.action&&r({results})}));

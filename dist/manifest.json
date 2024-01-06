@@ -3,6 +3,13 @@
     "name": "ChatGPT history search vue",
     "version": "1.0.1",
     "description": "Browser extension for searching chat history",
+    "permissions": ["activeTab", "https://chat.openai.com/*"],
+    "content_scripts": [
+      {
+        "matches": ["https://chat.openai.com/*"],
+        "js": ["js/content.js"]
+      }
+    ],
     "host_permissions": ["https://chat.openai.com/*"],
     "action": {
       "default_popup": "popup.html",

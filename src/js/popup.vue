@@ -72,9 +72,22 @@ export default {
       state: {
         quote: "Tailwind test",
         author: "Me",
+        searchQuery: '',
+        searchResults: [],
       },
     };
   },
+  methods: {
+  searchHistory() {
+    if (chrome.tabs) {
+      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.sendMessage(tabs[0].id, { action: "searchHistory", query: this.searchQuery }, (response) => {
+          this.searchResults = response.results;
+        });
+      });
+    }
+  }
+},
   created() {
     this.state.quote = "Tailwind test" // Extract the quote from the response
     this.state.author = "ME"     

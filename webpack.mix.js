@@ -9,5 +9,6 @@ mix
     postCss: [tailwindcss("./tailwind.config.js")],
   })
   .js("src/js/popup.js", "dist/js")
+  .js("src/js/content.js", "dist/js")
   .vue()
   .copy("src/img/", "dist/img");

@@ -1,1 +1,1 @@
-chrome.runtime.onMessage.addListener((function(e,s,r){"searchHistory"===e.action&&r({results})}));
+chrome.runtime.onMessage.addListener((function(e,n,o){if("searchHistory"===e.action)return console.log("listener here"),someAsyncFunction().then((function(e){o({results:e})})),!0}));

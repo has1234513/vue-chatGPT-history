@@ -78,18 +78,21 @@ export default {
     };
   },
   methods: {
-  searchHistory() {
-    console.log("method came")
-    if (chrome.tabs) {
-      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        chrome.tabs.sendMessage(tabs[0].id, { action: "searchHistory", query: this.searchQuery }, (response) => {
-          this.searchResults = response.results;
-          console.log("search history", chrome.tabs)
+    searchHistory() {
+      if (chrome.tabs) {
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+          chrome.tabs.sendMessage(tabs[0].id, { action: "searchHistory", query: this.searchQuery }, (response) => {
+            if (response && response.results) {
+              this.searchResults = response.results;
+            } else {
+              // Handle the case where there is no data
+              console.error('No results received or response is undefined');
+            }
+          });
         });
-      });
+      }
     }
-  }
-},
+  },
   created() {
     this.state.quote = "Tailwind test" // Extract the quote from the response
     this.state.author = "ME"     

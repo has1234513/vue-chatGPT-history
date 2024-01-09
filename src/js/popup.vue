@@ -84,6 +84,8 @@ export default {
           chrome.tabs.sendMessage(tabs[0].id, { action: "searchHistory", query: this.searchQuery }, (response) => {
             if (response && response.results) {
               this.searchResults = response.results;
+
+              console.log("search results")
             } else {
               // Handle the case where there is no data
               console.error('No results received or response is undefined');

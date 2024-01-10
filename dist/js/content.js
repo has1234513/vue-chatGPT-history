@@ -1,1 +1,1 @@
-chrome.runtime.onMessage.addListener((function(e,n,o){if("searchHistory"===e.action)return console.log("listener here"),someAsyncFunction().then((function(e){o({results:e})})),!0}));
+chrome.runtime.onMessage.addListener((function(e,o,r){if("searchHistory"===e.action){if("chat.openai.com"!==window.location.hostname)return void r({error:"Not on chat.openai.com"});var n=[];try{document.querySelectorAll("ul li").forEach((function(e){n.push(e.innerHTML)})),r({results:n})}catch(e){r({error:e.message})}return!0}}));

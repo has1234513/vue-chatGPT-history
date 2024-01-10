@@ -85,7 +85,7 @@ export default {
             if (response && response.results) {
               this.searchResults = response.results;
 
-              console.log("search results")
+              console.log("search results", this.searchResults)
             } else {
               // Handle the case where there is no data
               console.error('No results received or response is undefined');

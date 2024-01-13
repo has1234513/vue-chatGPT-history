@@ -9,6 +9,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     try {
       // Query all <li> elements
       const listItems = document.querySelectorAll("li[data-projection-id]");
+      console.log("l", listItems)
       listItems.forEach(item => {
         const linkElement = item.querySelector('a');
         const textDiv = item.querySelector('div');

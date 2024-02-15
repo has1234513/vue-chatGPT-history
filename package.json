@@ -17,6 +17,11 @@
   "author": "\"browser\",",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/free-regular-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/vue-fontawesome": "^3.0.6",
     "autoprefixer": "^10.4.16",
     "cross-env": "^7.0.3",
     "laravel-mix": "^6.0.49",

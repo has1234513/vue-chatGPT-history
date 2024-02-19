@@ -2,7 +2,7 @@
   <div class="container w-[1000px]">
     <h1 class="title text-center">ChatGPT Search History</h1>
 
-    <div class="flex flex-col p-2 py-6 m-h-screen">
+    <div v-if="isCorrectDomain" class="flex flex-col p-2 py-6 m-h-screen">
 
       <!-- Search Bar -->
       <div class="bg-white items-center justify-between w-full flex rounded-full shadow-lg p-2 mb-5 sticky" style="top: 5px">
@@ -27,6 +27,9 @@
       </div>
       
     </div>
+    <div v-else class="w-full text-xl p-10 text-rose-500">
+      Not on chat gpt domain
+    </div>
   </div>
 </template>
 <script>
@@ -37,6 +40,7 @@ export default {
         quote: "Tailwind test",
         author: "Me",
         searchQuery: '',
+        isCorrectDomain: false,
         historyResults: [],
       },
     };
@@ -59,9 +63,23 @@ export default {
       }
     }
   },
+  // In your Vue component
   created() {
-    this.state.quote = "Tailwind test" // Extract the quote from the response
-    this.state.author = "ME"     
-  },
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+      chrome.tabs.sendMessage(tabs[0].id, {action: "checkDomain"}, (response) => {
+        if (response.isOnDomain) {
+          console.log("User is on chat.openai.com");
+          this.isCorrectDomain = true
+          // Perform actions for when the user is on the correct domain
+        } else {
+          console.log("User is not on chat.openai.com");
+          // Handle the case where the user is not on the correct domain
+          this.isCorrectDomain = false
+        }
+      });
+    });
+  }
+
+
 };
 </script>
